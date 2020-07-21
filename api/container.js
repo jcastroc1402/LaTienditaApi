@@ -17,6 +17,14 @@ import EmployeeRoutes from "./routes/employee.routes";
 import ProductInventoryRoutes from "./routes/product.inventory.routes";
 import ProductUnitRoutes from "./routes/product.unit.routes";
 
+//Importar logica de negocio
+import {
+  ProductBusiness,
+  EmployeeBusiness,
+  ProductInventoryBusiness,
+  ProductUnitBusiness,
+} from "../domain";
+
 import Config from "../config/env";
 
 const container = createContainer();
@@ -26,6 +34,7 @@ container
   .register({
     app: asClass(StartUp).singleton(),
     server: asClass(Server).singleton(),
+    config: asValue(Config),
   })
   .register({
     ProductController: asClass(ProductController).singleton(),
@@ -39,7 +48,12 @@ container
     EmployeeRoutes: asFunction(EmployeeRoutes).singleton(),
     ProductInventoryRoutes: asFunction(ProductInventoryRoutes).singleton(),
     ProductUnitRoutes: asFunction(ProductUnitRoutes).singleton(),
-    config: asValue(Config),
+  })
+  .register({
+    EmployeeBusiness: asClass(EmployeeBusiness).singleton(),
+    ProductBusiness: asClass(ProductBusiness).singleton(),
+    ProductInventoryBusiness: asClass(ProductInventoryBusiness).singleton(),
+    ProductUnitBusiness: asClass(ProductUnitBusiness).singleton(),
   });
 
 export default container;
