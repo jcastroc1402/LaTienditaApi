@@ -4,7 +4,12 @@ import cors from "cors";
 import compression from "compression";
 
 //Se define el mapeo de rutas en un solo archivo
-export default function ({ ProductRoutes }) {
+export default function ({
+  ProductRoutes,
+  EmployeeRoutes,
+  ProductInventoryRoutes,
+  ProductUnitRoutes,
+}) {
   const router = Router();
   const apiRouter = Router();
 
@@ -12,6 +17,9 @@ export default function ({ ProductRoutes }) {
 
   //rutas parciales
   apiRouter.use("/product", ProductRoutes);
+  apiRouter.use("/employee", EmployeeRoutes);
+  apiRouter.use("/productinventory", ProductInventoryRoutes);
+  apiRouter.use("/productunit", ProductUnitRoutes);
 
   router.use("/api", apiRouter);
 

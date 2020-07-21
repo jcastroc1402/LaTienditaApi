@@ -2,6 +2,6 @@ export class ProductController {
   constructor() {}
 
   sayHello(req, res) {
-    return res.send({ message: "Hola Mundo" });
+    return res.send({ message: "Hola Mundo producto" });
   }
 }
