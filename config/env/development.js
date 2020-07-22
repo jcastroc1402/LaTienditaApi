@@ -1,7 +1,7 @@
-module.exports = {
+export default {
   PORT: process.env.PORT,
   DB: {
-    user: "mysql",
+    user: "admin",
     password: "root",
     database: "latiendita_dev",
     host: "localhost",

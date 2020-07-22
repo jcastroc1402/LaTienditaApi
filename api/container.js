@@ -25,6 +25,18 @@ import {
   ProductUnitBusiness,
 } from "../domain";
 
+//Importar repositorios
+import {
+  EmployeeRepository,
+  ProductRepository,
+  ProductInventoryRepository,
+  ProductUnitRepository,
+} from "../dal/repositories";
+
+//importar base de datos
+import db from "../dal/models";
+
+//Importar configuracion de entorno
 import Config from "../config/env";
 
 const container = createContainer();
@@ -35,6 +47,9 @@ container
     app: asClass(StartUp).singleton(),
     server: asClass(Server).singleton(),
     config: asValue(Config),
+  })
+  .register({
+    db: asValue(db),
   })
   .register({
     ProductController: asClass(ProductController).singleton(),
@@ -48,6 +63,12 @@ container
     EmployeeRoutes: asFunction(EmployeeRoutes).singleton(),
     ProductInventoryRoutes: asFunction(ProductInventoryRoutes).singleton(),
     ProductUnitRoutes: asFunction(ProductUnitRoutes).singleton(),
+  })
+  .register({
+    EmployeeRepository: asClass(EmployeeRepository).singleton(),
+    ProductRepository: asClass(ProductRepository).singleton(),
+    ProductInventoryRepository: asClass(ProductInventoryRepository).singleton(),
+    ProductUnitRepository: asClass(ProductUnitRepository).singleton(),
   })
   .register({
     EmployeeBusiness: asClass(EmployeeBusiness).singleton(),

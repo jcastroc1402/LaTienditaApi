@@ -1,4 +1,4 @@
-import BaseBusiness from "./base.business";
+import { BaseBusiness } from "./base.business";
 import { Product } from "./models";
 
 export class ProductBusiness extends BaseBusiness {

@@ -1,10 +1,8 @@
-module.exports = {
-  PORT: process.env.PORT,
-  DB: {
-    user: "mysql",
-    password: "root",
-    database: "latiendita_prd",
-    host: "localhost",
-    dialect: "mysql",
-  },
+export const PORT = process.env.PORT;
+export const DB = {
+  user: "mysql",
+  password: "root",
+  database: "latiendita_prd",
+  host: "localhost",
+  dialect: "mysql",
 };

@@ -1,9 +1,9 @@
-export class product {
+export class Product {
   id = 0;
   name = null;
   description = null;
   imageUrl = null;
-  price = 0;
+  status = null;
   createdAt = null;
   updateAt = null;
 }

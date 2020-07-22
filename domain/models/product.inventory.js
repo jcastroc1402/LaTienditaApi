@@ -1,8 +1,9 @@
 export class ProductInventory {
   id = 0;
   productName = null;
-  units = 0;
+  branchOffice = null;
   price = 0;
+  status = null;
   createdAt = null;
   updatedAt = null;
 }
