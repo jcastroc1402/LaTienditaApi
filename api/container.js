@@ -33,6 +33,14 @@ import {
   ProductUnitRepository,
 } from "../dal/repositories";
 
+//Importar servicios
+import {
+  EmployeeService,
+  ProductService,
+  ProductInventoryService,
+  ProductUnitService,
+} from "../services";
+
 //importar base de datos
 import db from "../dal/models";
 
@@ -75,6 +83,12 @@ container
     ProductBusiness: asClass(ProductBusiness).singleton(),
     ProductInventoryBusiness: asClass(ProductInventoryBusiness).singleton(),
     ProductUnitBusiness: asClass(ProductUnitBusiness).singleton(),
+  })
+  .register({
+    EmployeeService: asClass(EmployeeService).singleton(),
+    ProductService: asClass(ProductService).singleton(),
+    ProductInventoryService: asClass(ProductInventoryService).singleton(),
+    ProductUnitService: asClass(ProductService).singleton(),
   });
 
 export default container;
